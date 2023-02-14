@@ -5,6 +5,7 @@ API_KEY = "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"
 
 class Chatbot:
     def __init__(self):
+        # Set the OpenAI API key
         openai.api_key = API_KEY
 
     def get_response(self, user_input):
@@ -15,9 +16,3 @@ class Chatbot:
             temperature=0.5
         ).choices[0].text
         return response
-
-
-if __name__ == "__main__":
-    chatbot = Chatbot()
-    response = chatbot.get_response("Write a joke abut birds.")
-    print(response)
